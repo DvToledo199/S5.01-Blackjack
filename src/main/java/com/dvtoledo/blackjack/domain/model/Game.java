@@ -72,4 +72,7 @@ public class Game {
     public String getPlayerId() {
         return playerId;
     }
+
+    public Deck getDeck() { return deck;
+    }
 }
