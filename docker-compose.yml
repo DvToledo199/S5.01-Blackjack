@@ -1,0 +1,19 @@
+services:
+  mongodb:
+    image: mongo:7
+    container_name: blackjack-mongodb
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_DATABASE: blackjack
+
+  mysql:
+    image: mysql:8
+    container_name: blackjack-mysql
+    ports:
+      - "3307:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: blackjack
+      MYSQL_USER: blackjack
+      MYSQL_PASSWORD: password
