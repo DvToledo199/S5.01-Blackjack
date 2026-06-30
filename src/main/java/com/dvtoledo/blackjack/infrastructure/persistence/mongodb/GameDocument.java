@@ -19,7 +19,8 @@ public class GameDocument {
     private String playerId;
     private GameResult result;
 
-    public GameDocument() {}
+    public GameDocument() {
+    }
 
     public GameDocument(String id, Deck deck, Hand playerHand, Hand dealerHand, GameStatus status, String playerId, GameResult result) {
         this.id = id;
