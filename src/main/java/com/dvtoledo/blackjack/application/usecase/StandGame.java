@@ -17,10 +17,9 @@ public class StandGame {
     }
 
     public Game execute(String id) {
-        Game game = gameRepository.findById(id).orElse(null);
-        if (game == null) {
-            throw new RuntimeException("Game not found: " + id);
-        }
+        Game game = gameRepository.findById(id).orElseThrow(()->new RuntimeException("Game not found: " + id));
+
+
         game.playerStand();
         gameRepository.save(game);
         PlayerStats stats = rankingRepository.findByPlayerId(game.getPlayerId())

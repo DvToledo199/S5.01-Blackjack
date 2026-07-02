@@ -34,3 +34,9 @@ build/
 
 ### macOS ###
 .DS_Store
+
+### Claude / AI ###
+.claude/
+.agents/
+CLAUDE.md
+skills-lock.json

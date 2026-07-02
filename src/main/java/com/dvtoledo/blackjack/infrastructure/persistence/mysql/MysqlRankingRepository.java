@@ -3,6 +3,7 @@ package com.dvtoledo.blackjack.infrastructure.persistence.mysql;
 import com.dvtoledo.blackjack.domain.model.PlayerStats;
 import com.dvtoledo.blackjack.domain.port.RankingRepository;
 
+import java.util.List;
 import java.util.Optional;
 
 public class MysqlRankingRepository implements RankingRepository {
@@ -22,5 +23,11 @@ public class MysqlRankingRepository implements RankingRepository {
     public Optional<PlayerStats> findByPlayerId(String playerId) {
         return springDataMysqlRankingRepository.findById(playerId)
                 .map(PlayerStatsMapper::toDomain);
+    }
+
+    @Override
+    public List<PlayerStats> findAll() {
+       return springDataMysqlRankingRepository.findAll()
+                .stream().map(PlayerStatsMapper::toDomain).toList();
     }
 }
